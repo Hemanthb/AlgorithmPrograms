@@ -35,6 +35,24 @@ namespace AlgorithmPrograms
                 string s = new string(charArray);
                 return s;
             }
+        //Checks whether 2 words are anagram
+        public void Anagram(string word1,string word2)
+        {
+            int count = 0;
+            for(int i=0; i < word1.Length; i++)
+            {
+                if (word2.Contains(word1[i]))
+                {
+                    count++;
+                }
+            }
+            if (count == word1.Length)
+            {
+                Console.WriteLine("Given 2 words are anagram");
+                return;
+            }
+            Console.WriteLine("Given 2 words aren't anagram");
+        }
 
         }
 
