@@ -1,6 +1,8 @@
 ﻿AlgorithmPrograms.StringPermutation permutation = new AlgorithmPrograms.StringPermutation();
 AlgorithmPrograms.Sorting sorts = new AlgorithmPrograms.Sorting();
-Console.WriteLine("Enter\n1 - Permutation\n2 - Binary Search\n3 - For Sort\n4 - Anagram\nAnd your choice:");
+AlgorithmPrograms.UnorderedWordsList wordsList = new AlgorithmPrograms.UnorderedWordsList();
+Console.WriteLine("Enter\n1 - Permutation\n2 - Binary Search\n3 - For Sort\n4 - Anagram\n" +
+    "5 - UnorderedWordsSearchList\nAnd your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 switch (choice) 
 {
@@ -47,6 +49,27 @@ switch (choice)
         Console.WriteLine("Enter the second word:");
         string word2 = Console.ReadLine();
         permutation.Anagram(word1,word2);
+        break;
+    case 5:
+        string file = @"D:\blabz_fellowship\AlgorithmPrograms\AlgorithmPrograms\AlgorithmPrograms\wordlist.txt";
+        string fileContent = "";
+        if (File.Exists(file))
+        {
+            fileContent = File.ReadAllText(file);
+        }
+        string[] wordsArray = fileContent.ToLower().Split(' ');
+        foreach(string wrd in wordsArray)
+        {
+            wordsList.addNode(wrd);
+        }
+        wordsList.Displaylist();
+        Console.WriteLine("ENter a word to check whther it exists in the file");
+        string find = Console.ReadLine();
+        if(wordsList.Search(find) < 0)
+            wordsList.addNode(find);
+        else
+            wordsList.Remove(find);
+        wordsList.Displaylist();
         break;
 
 }
