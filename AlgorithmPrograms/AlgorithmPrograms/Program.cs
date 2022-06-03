@@ -1,5 +1,7 @@
 ﻿AlgorithmPrograms.StringPermutation permutation = new AlgorithmPrograms.StringPermutation();
-int choice = 2;
+AlgorithmPrograms.Sorting sorts = new AlgorithmPrograms.Sorting();
+Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\nEnter your choice:");
+int choice = Convert.ToInt32(Console.ReadLine());
 switch (choice) 
 {
     case 1:
@@ -22,5 +24,16 @@ switch (choice)
         string[] wordArray = fileContents.ToLower().Split(' ');
         Array.Sort(wordArray);
         binarySearch.SearchWord(wordArray, 0, (wordArray.Length-1), search);
-        break;   
+        break;
+    case 3:
+        Console.WriteLine("Enter the num of words you want to add:");
+        int number = Convert.ToInt32(Console.ReadLine());
+        string[] array = new string[number];
+        for (int i = 0; i < number; i++)
+        {
+            Console.WriteLine("Enter a word:");
+            array[i] = Console.ReadLine();
+        }
+        sorts.InsertionSort(array);
+        break;
 }
