@@ -1,6 +1,6 @@
 ﻿AlgorithmPrograms.StringPermutation permutation = new AlgorithmPrograms.StringPermutation();
 AlgorithmPrograms.Sorting sorts = new AlgorithmPrograms.Sorting();
-Console.WriteLine("1.Permutation\n2.Binary Search\n3.Insertion Sort\nEnter your choice:");
+Console.WriteLine("Enter\n1.Permutation\n2.Binary Search\n3.For Sort\nEnter your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 switch (choice) 
 {
@@ -34,6 +34,12 @@ switch (choice)
             Console.WriteLine("Enter a word:");
             array[i] = Console.ReadLine();
         }
-        sorts.InsertionSort(array);
+        Console.WriteLine("Enter\n 1 - Insertion Sort\n 2 - Bubble Sort");
+        int sortChoice = Convert.ToInt32(Console.ReadLine());
+        if(sortChoice== 1)
+            sorts.InsertionSort(array);
+        if (sortChoice == 2)
+            sorts.BubbleSort(array);
         break;
+   
 }

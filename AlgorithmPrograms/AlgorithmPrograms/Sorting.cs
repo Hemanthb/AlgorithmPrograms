@@ -27,5 +27,24 @@ namespace AlgorithmPrograms
                 Console.WriteLine(wordArray[i]);
 
         }
+        public void BubbleSort(string[] wordArray)
+        {
+            for (int i = 0; i < wordArray.Length; i++)
+            {
+                for (int j = i+1; j < wordArray.Length; j++)
+                {
+                    if (wordArray[j].CompareTo(wordArray[i]) < 0)
+                    {
+                        string temp = wordArray[j];
+                        wordArray[j] = wordArray[i];
+                        wordArray[i] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Sorted array is:");
+            for (int i = 0; i < wordArray.Length; i++)
+                Console.WriteLine(wordArray[i]);
+
+        }
     }
 }
