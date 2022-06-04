@@ -71,5 +71,24 @@ switch (choice)
             wordsList.Remove(find);
         wordsList.Displaylist();
         break;
+    case 6:
+        AlgorithmPrograms.OrderedLinkedList ordered = new AlgorithmPrograms.OrderedLinkedList();
+        string file1 = @"D:\blabz_fellowship\AlgorithmPrograms\AlgorithmPrograms\AlgorithmPrograms\NumberList.txt";
+        string fileContent1 = "";
+        if (File.Exists(file1))
+        {
+            fileContent1 = File.ReadAllText(file1);
+        }
+        string[] numArray = fileContent1.Split(' ');
+        foreach (string wrd in numArray)
+        {
+            int pos = ordered.InsertNewNode(Convert.ToInt32(wrd));
+            Console.WriteLine("Data entered at position - " + pos);
+        }
+        ordered.Displaylist();
+        ordered.sortElement();
+        Console.WriteLine("*********After Sorting********");
+        ordered.Displaylist();
+        break;
 
 }
