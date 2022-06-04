@@ -2,7 +2,7 @@
 AlgorithmPrograms.Sorting sorts = new AlgorithmPrograms.Sorting();
 AlgorithmPrograms.UnorderedWordsList wordsList = new AlgorithmPrograms.UnorderedWordsList();
 Console.WriteLine("Enter\n1 - Permutation\n2 - Binary Search\n3 - For Sort\n4 - Anagram\n" +
-    "5 - UnorderedWordsSearchList\nAnd your choice:");
+    "5 - UnorderedWordsSearchList\n6 - Ordered List\n7 - Balanced Parenthesis stack\nAnd your choice:");
 int choice = Convert.ToInt32(Console.ReadLine());
 switch (choice) 
 {
@@ -89,6 +89,15 @@ switch (choice)
         ordered.sortElement();
         Console.WriteLine("*********After Sorting********");
         ordered.Displaylist();
+        break;
+    case 7:
+        AlgorithmPrograms.StackBalancedParenthesis stack = new AlgorithmPrograms.StackBalancedParenthesis();
+        Console.WriteLine("Enter Arithmetic Expression:");
+        string exp = Console.ReadLine();
+        stack.BalancedParanthesis(exp);
+        break;
+    default:
+        Console.WriteLine("Invalid Input");
         break;
 
 }
